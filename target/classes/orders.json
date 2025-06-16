@@ -1,0 +1,11 @@
+{
+  "colDefs": [
+    { "headerName": "Order ID", "field": "orderId" },
+    { "headerName": "Customer Name", "field": "customerName" },
+    { "headerName": "Product", "field": "product" },
+    { "headerName": "Quantity", "field": "quantity" },
+    { "headerName": "Total Price (₹)", "field": "totalPrice" },
+    { "headerName": "Order Date", "field": "orderDate" },
+    { "headerName": "Status", "field": "status", "cellStyle": "statusCellStyle"}
+  ]
+}

@@ -1,0 +1,136 @@
+{
+    "colDefs": [
+        {
+            "headerName": "Product Name",
+            "field": "productName",
+            "filter": true,
+            "editable": true,
+            "enableRowGroup": true
+        },
+        {
+            "headerName": "Fabric Type",
+            "field": "fabricType",
+            "filter": true,
+            "editable": true,
+            "enableRowGroup": true
+        },
+        {
+            "headerName": "Product Code",
+            "field": "productCode",
+            "filter": true,
+            "editable": true
+        },
+        {
+            "headerName": "GSM",
+            "field": "gsm",
+            "filter": true,
+            "editable": true,
+			"type": "number",
+            "enableValue": true
+        },
+        {
+            "headerName": "Width",
+            "field": "width",
+            "filter": true,
+            "editable": true,
+            "enableValue": true
+        },
+        {
+            "headerName": "Color",
+            "field": "color",
+            "filter": true,
+            "editable": true,
+            "enableRowGroup": true
+        },
+        {
+            "headerName": "Pattern",
+            "field": "pattern",
+            "filter": true,
+            "editable": true,
+            "enableRowGroup": true
+        },
+        {
+            "headerName": "Quantity In Stock",
+            "field": "quantityInStock",
+            "filter": true,
+            "editable": true,
+            "enableValue": true,
+			"cellStyle": "quantityCellStyle"
+        },
+        {
+            "headerName": "Unit of Measure",
+            "field": "unitOfMeasure",
+            "filter": true,
+            "editable": true,
+            "enableRowGroup": true
+        },
+        {
+            "headerName": "Unit Price (₹)",
+            "field": "unitPrice",
+            "filter": true,
+            "editable": true,
+            "enableValue": true
+        },
+        {
+            "headerName": "Reorder Level",
+            "field": "reorderLevel",
+            "filter": true,
+            "editable": true,
+            "enableValue": true
+        },
+        {
+            "headerName": "Last Restocked Date",
+            "field": "lastRestockedDate",
+            "filter": true,
+            "editable": true
+        },
+        {
+            "headerName": "Storage Location",
+            "field": "storageLocation",
+            "filter": true,
+            "editable": true,
+            "enableRowGroup": true
+        },
+        {
+            "headerName": "Fabric Finish",
+            "field": "fabricFinish",
+            "filter": true,
+            "editable": true,
+            "enableRowGroup": true
+        },
+        {
+            "headerName": "Application Area",
+            "field": "applicationArea",
+            "filter": true,
+            "editable": true,
+            "enableRowGroup": true
+        },
+        {
+            "headerName": "Quality Status",
+            "field": "qualityStatus",
+            "filter": true,
+            "editable": true,
+            "enableRowGroup": true
+        },
+        {
+            "headerName": "Remarks",
+            "field": "remarks",
+            "filter": true,
+            "editable": true
+        },
+        {
+            "headerName": "Created At",
+            "field": "createdAt",
+			"type": "date",
+            "filter": true,
+            "editable": true
+        },
+        {
+            "headerName": "Updated At",
+            "field": "updatedAt",
+			"type": "date",
+            "filter": true,
+            "editable": true
+        }
+    ]
+}

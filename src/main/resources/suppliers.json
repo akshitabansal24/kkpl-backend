@@ -1,0 +1,15 @@
+{
+  "colDefs": [
+    { "headerName": "Supplier Name", "field": "supplierName" },
+    { "headerName": "Product Type", "field": "productType" },
+    { "headerName": "Email", "field": "email" },
+    { "headerName": "Phone", "field": "phone" },
+    { "headerName": "Location", "field": "location" },
+    { "headerName": "Reliability Score", "field": "reliabilityScore" }
+  ],
+  "rowData": [
+    { "supplierName": "Alpha Textiles", "productType": "Cotton", "email": "alpha@textiles.com", "phone": "9876543210", "location": "Ludhiana", "reliabilityScore": 8.7 },
+    { "supplierName": "PolyFab Ltd", "productType": "Polyester", "email": "contact@polyfab.in", "phone": "9123456780", "location": "Surat", "reliabilityScore": 7.9 },
+    { "supplierName": "Woolen Works", "productType": "Wool", "email": "support@woolenworks.com", "phone": "8899001122", "location": "Amritsar", "reliabilityScore": 9.2 }
+  ]
+}

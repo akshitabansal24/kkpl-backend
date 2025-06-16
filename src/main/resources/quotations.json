@@ -1,0 +1,16 @@
+{
+  "colDefs": [
+    { "headerName": "Quotation ID", "field": "quotationId" },
+    { "headerName": "Customer Name", "field": "customerName" },
+    { "headerName": "Product", "field": "product" },
+    { "headerName": "Requested Quantity", "field": "requestedQty" },
+    { "headerName": "Proposed Price (₹)", "field": "proposedPrice" },
+    { "headerName": "Request Date", "field": "requestDate" },
+    { "headerName": "Status", "field": "status" }
+  ],
+  "rowData": [
+    { "quotationId": "QT001", "customerName": "FabX", "product": "Silk Roll", "requestedQty": 30, "proposedPrice": 4500, "requestDate": "2025-05-10", "status": "Accepted" },
+    { "quotationId": "QT002", "customerName": "StyleWeave", "product": "Polyester Yarn", "requestedQty": 80, "proposedPrice": 4800, "requestDate": "2025-05-14", "status": "Pending" },
+    { "quotationId": "QT003", "customerName": "Woolly", "product": "Wool Blend", "requestedQty": 20, "proposedPrice": 1600, "requestDate": "2025-05-16", "status": "Rejected" }
+  ]
+}

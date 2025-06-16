@@ -1,5 +1,8 @@
 package kkpl.model;
 
+import java.util.List;
+import java.util.Map;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.AllArgsConstructor;
@@ -9,10 +12,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class ReportData {
 	@JsonProperty
-    private String id;
+	private List<ColDef> colDefs;
 	@JsonProperty
-    private String name;
-
+	private List<Map<String, Object>> rowData;
 }
