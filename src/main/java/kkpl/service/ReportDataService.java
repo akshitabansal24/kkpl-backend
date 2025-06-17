@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
@@ -18,6 +19,7 @@ import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mysql.cj.exceptions.DataReadException;
 
+import jakarta.servlet.http.HttpServletRequest;
 import kkpl.model.ColDef;
 import kkpl.model.ReportData;
 import kkpl.model.ReportRequest;
@@ -49,7 +51,11 @@ public class ReportDataService {
 					colDef.setField(col.get("COLUMN_NAME").toString());
 					colDef.setType(col.get("DATA_TYPE").toString());
 					colDef.setFilter(true);
-					colDef.setEditable(true);
+					if(col.get("COLUMN_NAME").toString().equalsIgnoreCase("updatedBy") || col.get("COLUMN_NAME").toString().equalsIgnoreCase("updatedAt")) {
+						colDef.setEditable(false);
+					} else {
+						colDef.setEditable(true);
+					}
 					if(col.get("DATA_TYPE").toString().equalsIgnoreCase("varchar") || col.get("DATA_TYPE").toString().equalsIgnoreCase("datetime")) {
 						colDef.setEnableRowGroup(true);
 					} else if(col.get("DATA_TYPE").toString().equalsIgnoreCase("int") || col.get("DATA_TYPE").toString().equalsIgnoreCase("decimal")) {
@@ -70,10 +76,10 @@ public class ReportDataService {
 		return null;
 	}
 	
-	public ReportData updateReportData(ReportRequest reportRequest) {
+	public ReportData updateReportData(ReportRequest reportRequest, String username) {
 		try {
 			ReportData reportData= new ReportData();
-			dataRepository.updateData(reportRequest.getReportName(), reportRequest.getData());
+			dataRepository.updateData(reportRequest.getReportName(), reportRequest.getData(), username);
 			List<Map<String, Object>> dataList = dataRepository.getDataList(reportRequest.getReportName());
 			reportData.setRowData(dataList);
 			return reportData;
@@ -87,6 +93,17 @@ public class ReportDataService {
 	
 	public List<String> getReports() {
 		return dataRepository.getReports();
+	}
+	
+	public String getUserName(HttpServletRequest httpRequest) {
+		String authHeaderValue = httpRequest.getHeader("authorization");
+    	if(authHeaderValue != null) {
+    		String header = authHeaderValue.replace("Basic ", "");
+    		String username = new String(new Base64().decode(header)).split(":",2)[0];
+    		return username;
+    	} else {
+    		return null;
+    	}
 	}
 	
 }

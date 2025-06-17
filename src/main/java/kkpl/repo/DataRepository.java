@@ -5,6 +5,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -24,16 +25,23 @@ public class DataRepository {
 //        new User(rs.getString("id"), rs.getString("name"));
 //
 //    // Insert user
-    public int updateData(String tableName, Map<String, Object> data) {
+    public int updateData(String tableName, Map<String, Object> data, String username) {
     	List<String> updateFields = new ArrayList();
         List<Object> values = new ArrayList();
 
         for (Map.Entry<String, Object> entry : data.entrySet()) {
             String key = entry.getKey();
             if (!key.equals("id")) {
-                updateFields.add(key + " = ?");
-                values.add(entry.getValue());
+            	updateFields.add(key + " = ?");
+            	if (key.equals("updatedBy")) {
+                    values.add(username);
+                } else if (key.equals("updatedAt")) {
+                	values.add(new Date());
+                } else {
+	                values.add(entry.getValue());
+                }
             }
+            
         }
 
         // Add primary key value at the end (for WHERE clause)
